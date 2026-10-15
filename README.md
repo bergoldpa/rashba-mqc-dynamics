@@ -14,6 +14,8 @@ This code accompanies the paper
 
 If you use this code, please cite the paper and the code (see `CITATION.cff`).
 
+Code: https://github.com/bergoldpa/rashba-mqc-dynamics
+
 ## License
 
 MIT License, see `LICENSE`.

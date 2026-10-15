@@ -3,6 +3,7 @@ message: "If you use this code, please cite it as below."
 title: "Koopmon and Ehrenfest dynamics for spin-orbit coupled systems with exact quantum reference"
 type: software
 license: MIT
+repository-code: "https://github.com/bergoldpa/rashba-mqc-dynamics"
 authors:
   - family-names: Bergold
     given-names: Paul
