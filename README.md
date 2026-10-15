@@ -1,4 +1,7 @@
-# Mixed quantum-classical dynamics: Ehrenfest, koopmons and exact (SOFT) reference
+# Quantum-classical dynamics of Rashba spin-orbit coupling
+
+MATLAB code for koopmon and Ehrenfest (mixed quantum-classical) dynamics with an exact
+quantum reference (SOFT).
 
 All MATLAB code lives in `core/`. The five test cases differ only in their
 parameters (`caseN/case_parameters.m`); their results are stored in the case folders.

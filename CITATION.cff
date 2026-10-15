@@ -1,16 +1,21 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite it as below."
-title: "Koopmon and Ehrenfest dynamics for spin-orbit coupled systems with exact quantum reference"
+title: "Code for: Quantum-classical dynamics of Rashba spin-orbit coupling"
 type: software
 license: MIT
 repository-code: "https://github.com/bergoldpa/rashba-mqc-dynamics"
 authors:
   - family-names: Bergold
     given-names: Paul
+    affiliation: "Instytut Matematyki, Uniwersytet Gdański, Gdańsk, Poland"
+    orcid: "https://orcid.org/0000-0003-3033-0732"
   - family-names: Manfredi
     given-names: Giovanni
+    affiliation: "Université de Strasbourg, CNRS, Institut de Physique et Chimie des Matériaux de Strasbourg, Strasbourg, France"
   - family-names: Tronci
     given-names: Cesare
+    affiliation: "School of Mathematics and Physics, University of Surrey, Guildford, United Kingdom"
+    orcid: "https://orcid.org/0000-0002-8868-8027"
 date-released: "2026-10-14"
 preferred-citation:
   type: article
