@@ -4,7 +4,7 @@ title: "Code for: Quantum-classical dynamics of Rashba spin-orbit coupling"
 type: software
 license: MIT
 repository-code: "https://github.com/bergoldpa/rashba-mqc-dynamics"
-doi: "10.5281/zenodo.23397392"
+doi: "10.5281/zenodo.23397391"
 authors:
   - family-names: Bergold
     given-names: Paul
