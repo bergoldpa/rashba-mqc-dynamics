@@ -1,5 +1,7 @@
 # Quantum-classical dynamics of Rashba spin-orbit coupling
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23397392.svg)](https://doi.org/10.5281/zenodo.23397392)
+
 MATLAB code for koopmon and Ehrenfest (mixed quantum-classical) dynamics with an exact
 quantum reference (SOFT).
 
@@ -17,7 +19,7 @@ This code accompanies the paper
 
 If you use this code, please cite the paper and the code (see `CITATION.cff`).
 
-Code: https://github.com/bergoldpa/rashba-mqc-dynamics
+Code: https://github.com/bergoldpa/rashba-mqc-dynamics (archived on Zenodo: https://doi.org/10.5281/zenodo.23397392)
 
 ## License
 
