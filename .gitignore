@@ -1,0 +1,11 @@
+# Only code, LaTeX sources and documentation are tracked.
+# All results are created by running run_project.m.
+*
+!*/
+!*.m
+!*.tex
+!*.md
+!LICENSE
+!CITATION.cff
+!.gitignore
+.texpadtmp/

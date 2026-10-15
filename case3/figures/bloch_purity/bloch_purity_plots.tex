@@ -1,0 +1,182 @@
+% Bloch vector components n_x, n_y, n_z and purity over time:
+% exact quantum solution (SOFT), koopmons and Ehrenfest.
+% Input: input/<method>_n1_N.dat, _n2_N.dat, _n3_N.dat, _purity_N.dat, created by
+% plot_bloch_purity.m / plot_bloch_purity_soft.m and converted to ps or ns
+% with convert_bloch_purity_time.m.
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usetikzlibrary{matrix}
+
+\definecolor{my_brown}{RGB}{181,146,122}
+\definecolor{my_green}{RGB}{20,180,80}
+\definecolor{my_orange}{RGB}{255,175,60}
+
+\begin{document}
+\begin{tabular}{cc}
+	%
+	\begin{tikzpicture}
+		%
+		\begin{axis}
+			[
+			width = 16cm,
+			height = 8cm,
+			title = {Evolution of the $x$ component of the Bloch vector},
+			scale = .7,
+			xmin = 0,
+			xmax = 822,
+			ymin = -1.01,
+			ymax = 1.01,
+			grid = both,
+			xlabel = Time $t$ (ps),
+			ylabel = $n_x(t)$,
+			grid style = {
+				line width = .5pt,
+				draw = gray!50,
+				dotted},
+			major grid style = {
+				line width = .5pt,
+				draw = gray!50,
+				solid}
+			]
+			\addplot[my_brown!80, line width = 2.5pt, smooth] table
+				{input/soft_n1_N.dat};
+				\label{S}
+			\addplot[my_orange, very thick, each nth point = 1, smooth] table
+				{input/ehrenfest_n1_N.dat};
+				\label{E}
+			\addplot[my_green, very thick, each nth point = 1, smooth] table
+				{input/koopmons_n1_N.dat};
+				\label{K}
+		\end{axis}
+		%
+	\end{tikzpicture}
+	%
+	&
+	%
+	\begin{tikzpicture}
+		%
+		\begin{axis}
+			[
+			width = 16cm,
+			height = 8cm,
+			title = {Evolution of the $y$ component of the Bloch vector},
+			scale = .7,
+			xmin = 0,
+			xmax = 822,
+			ymin = -1.01,
+			ymax = 1.01,
+			grid = both,
+			xlabel = Time $t$ (ps),
+			ylabel = $n_y(t)$,
+			grid style = {
+				line width = .5pt,
+				draw = gray!50,
+				dotted},
+			major grid style = {
+				line width = .5pt,
+				draw = gray!50,
+				solid}
+			]
+			\addplot[my_brown!80, line width = 2.5pt, smooth] table
+				{input/soft_n2_N.dat};
+			\addplot[my_orange, very thick, each nth point = 1, smooth] table
+				{input/ehrenfest_n2_N.dat};
+			\addplot[my_green, very thick, each nth point = 1, smooth] table
+				{input/koopmons_n2_N.dat};
+		\end{axis}
+		%
+	\end{tikzpicture}\\
+	%
+	\begin{tikzpicture}
+		%
+		\begin{axis}
+			[
+			width = 16cm,
+			height = 8cm,
+			title = {Evolution of the $z$ component of the Bloch vector},
+			scale = .7,
+			xmin = 0,
+			xmax = 822,
+			ymin = -1.01,
+			ymax = 1.01,
+			grid = both,
+			xlabel = Time $t$ (ps),
+			ylabel = $n_z(t)$,
+			grid style = {
+				line width = .5pt,
+				draw = gray!50,
+				dotted},
+			major grid style = {
+				line width = .5pt,
+				draw = gray!50,
+				solid}
+			]
+			\addplot[my_brown!80, line width = 2.5pt, smooth] table
+				{input/soft_n3_N.dat};
+			\addplot[my_orange, very thick, each nth point = 1, smooth] table
+				{input/ehrenfest_n3_N.dat};
+			\addplot[my_green, very thick, each nth point = 1, smooth] table
+				{input/koopmons_n3_N.dat};
+		\end{axis}
+		%
+	\end{tikzpicture}
+	%
+	&
+	%
+	\begin{tikzpicture}
+		%
+		\begin{axis}
+			[
+			width = 16cm,
+			height = 8cm,
+			title = {Evolution of purity},
+			scale = .7,
+			xmin = 0,
+			xmax = 822,
+			ymin = .49,
+			ymax = 1.01,
+			grid = both,
+			xlabel = Time $t$ (ps),
+			ylabel = $P(t)$,
+			grid style = {
+				line width = .5pt,
+				draw = gray!50,
+				dotted},
+			major grid style = {
+				line width = .5pt,
+				draw = gray!50,
+				solid}
+			]
+			\addplot[my_brown!80, line width = 2.5pt, smooth] table
+				{input/soft_purity_N.dat};
+			\addplot[my_orange, very thick, each nth point = 1, smooth] table
+				{input/ehrenfest_purity_N.dat};
+			\addplot[my_green, very thick, each nth point = 1, smooth] table
+				{input/koopmons_purity_N.dat};
+		\end{axis}
+		%
+		\matrix
+			[
+			matrix of nodes,
+			anchor = north east,
+			fill = white,
+			draw,
+			inner sep = 2pt,
+			node font = \scriptsize,
+			column 1/.style={nodes={align=left, text width=8mm}},
+			column 2/.style={nodes={align=left, text width=15mm}},
+			xshift = -1mm,
+			yshift = -1mm]
+		at (current axis.north east) {
+			\ref{S} & Quantum\\[1mm]
+			\ref{K} & koopmons\\[1mm]
+			\ref{E} & Ehrenfest\\[1mm]
+			};
+	\end{tikzpicture}
+	%
+\end{tabular}
+\end{document}

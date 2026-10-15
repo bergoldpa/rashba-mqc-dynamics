@@ -1,0 +1,148 @@
+% Spin-momentum correlation corr(p, sigma_k), k = x, y, z, over time:
+% exact quantum solution (SOFT), koopmons and Ehrenfest.
+% Input: input/<method>_sc1_N.dat, _sc2_N.dat, _sc3_N.dat, created by
+% compute_spin_correlation.m / compute_spin_correlation_soft.m and converted
+% to ps or ns with convert_spin_correlation_time.m.
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usetikzlibrary{matrix}
+
+\definecolor{my_brown}{RGB}{181,146,122}
+\definecolor{my_green}{RGB}{20,180,80}
+\definecolor{my_orange}{RGB}{255,175,60}
+
+\begin{document}
+\begin{tabular}{cc}
+	%
+	\begin{tikzpicture}
+		%
+		\begin{axis}
+			[
+			width = 16cm,
+			height = 8cm,
+			title = {Evolution of the spin-current correlation along $\hat\sigma_x$},
+			scale = .7,
+			xmin = 0,
+			xmax = 45,
+			ymin = -1,
+			ymax = 1,
+			grid = both,
+			xlabel = Time $t$ (ps),
+			ylabel = $\operatorname{corr}(p{,\,}\widehat\sigma_x)$,
+			grid style = {
+				line width = .5pt,
+				draw = gray!50,
+				dotted},
+			major grid style = {
+				line width = .5pt,
+				draw = gray!50,
+				solid}
+			]
+			\addplot[my_brown!80, line width = 2.5pt, smooth] table
+				{input/soft_sc1_N.dat};
+				\label{S}
+			\addplot[my_orange, very thick, each nth point = 1, smooth] table
+				{input/ehrenfest_sc1_N.dat};
+				\label{E}
+			\addplot[my_green, very thick, each nth point = 1, smooth] table
+				{input/koopmons_sc1_N.dat};
+				\label{K}
+		\end{axis}
+		%
+		\matrix
+			[
+			matrix of nodes,
+			anchor = north east,
+			fill = white,
+			draw,
+			inner sep = 2pt,
+			node font = \scriptsize,
+			column 1/.style={nodes={align=left, text width=8mm}},
+			column 2/.style={nodes={align=left, text width=15mm}},
+			xshift = -1mm,
+			yshift = -1mm]
+		at (current axis.north east) {
+			\ref{S} & Quantum\\[1mm]
+			\ref{K} & koopmons\\[1mm]
+			\ref{E} & Ehrenfest\\[1mm]
+			};
+	\end{tikzpicture}
+	%
+	&
+	%
+	\begin{tikzpicture}
+		%
+		\begin{axis}
+			[
+			width = 16cm,
+			height = 8cm,
+			title = {Evolution of the spin-current correlation along $\hat\sigma_y$},
+			scale = .7,
+			xmin = 0,
+			xmax = 45,
+			ymin = -1,
+			ymax = 1,
+			grid = both,
+			xlabel = Time $t$ (ps),
+			ylabel = $\operatorname{corr}(p{,\,}\widehat\sigma_y)$,
+			grid style = {
+				line width = .5pt,
+				draw = gray!50,
+				dotted},
+			major grid style = {
+				line width = .5pt,
+				draw = gray!50,
+				solid}
+			]
+			\addplot[my_brown!80, line width = 2.5pt, smooth] table
+				{input/soft_sc2_N.dat};
+			\addplot[my_orange, very thick, each nth point = 1, smooth] table
+				{input/ehrenfest_sc2_N.dat};
+			\addplot[my_green, very thick, each nth point = 1, smooth] table
+				{input/koopmons_sc2_N.dat};
+		\end{axis}
+		%
+
+	\end{tikzpicture}\\
+	\multicolumn{2}{c}{
+	%
+	\begin{tikzpicture}
+		%
+		\begin{axis}
+			[
+			width = 16cm,
+			height = 8cm,
+			title = {Evolution of the spin-current correlation along $\hat\sigma_z$},
+			scale = .7,
+			xmin = 0,
+			xmax = 45,
+			ymin = -1,
+			ymax = 1,
+			grid = both,
+			xlabel = Time $t$ (ps),
+			ylabel = $\operatorname{corr}(p{,\,}\widehat\sigma_z)$,
+			grid style = {
+				line width = .5pt,
+				draw = gray!50,
+				dotted},
+			major grid style = {
+				line width = .5pt,
+				draw = gray!50,
+				solid}
+			]
+			\addplot[my_brown!80, line width = 2.5pt, smooth] table
+				{input/soft_sc3_N.dat};
+			\addplot[my_orange, very thick, each nth point = 1, smooth] table
+				{input/ehrenfest_sc3_N.dat};
+			\addplot[my_green, very thick, each nth point = 1, smooth] table
+				{input/koopmons_sc3_N.dat};
+		\end{axis}
+		%
+	\end{tikzpicture}
+	%
+	}
+\end{tabular}
+\end{document}

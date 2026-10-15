@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+title: "Koopmon and Ehrenfest dynamics for spin-orbit coupled systems with exact quantum reference"
+type: software
+license: MIT
+authors:
+  - family-names: Bergold
+    given-names: Paul
+  - family-names: Manfredi
+    given-names: Giovanni
+  - family-names: Tronci
+    given-names: Cesare
+date-released: "2026-10-14"
+preferred-citation:
+  type: article
+  title: "Quantum-classical dynamics of Rashba spin-orbit coupling"
+  authors:
+    - family-names: Bergold
+      given-names: Paul
+    - family-names: Manfredi
+      given-names: Giovanni
+    - family-names: Tronci
+      given-names: Cesare
+  year: 2026
+  url: "https://arxiv.org/abs/2603.23758"
+  identifiers:
+    - type: other
+      value: "arXiv:2603.23758"

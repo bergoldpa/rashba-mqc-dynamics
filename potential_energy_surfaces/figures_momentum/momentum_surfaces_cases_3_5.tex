@@ -1,0 +1,104 @@
+% Energy surfaces of the MomC model as functions of momentum (cases 3, 4 and 5).
+% Input: MOM<case>_1.dat, MOM<case>_2.dat (lower/upper surface), created by
+% momentum_surfaces.m.
+
+\documentclass{standalone}
+
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usetikzlibrary{matrix}
+\usetikzlibrary{patterns}
+\usepgfplotslibrary{fillbetween}
+
+\begin{document}
+
+% cases 3, 4 and 5
+\begin{tabular}{ccc}
+	%
+	\begin{tikzpicture}
+		%
+		\begin{axis}[
+			width = 16cm,
+			height = 8cm,
+			scale = .7,
+			xmin = -3,
+			xmax = 3,
+			ymin = -.1,
+			ymax = .75,
+			xlabel = {Momentum (eV/c)},
+			ylabel = {Energy (meV)},
+			grid = both,
+			]
+			\addplot[thick] table {MOM3_1.dat};
+			\label{lambda2}
+			\addplot[thick, red] table {MOM3_2.dat};
+			\label{lambda1}
+		\end{axis}
+		%
+		\matrix
+			[
+			matrix of nodes,
+			anchor = south east,
+			fill = white,
+			draw,
+			inner sep = 2pt,
+			node font = \scriptsize,
+			column 1/.style={nodes={align=left, text width=8mm}},
+			column 2/.style={nodes={align=left, text width=4mm}},
+			xshift = -1mm,
+			yshift = 1mm]
+		at (current axis.south east) {
+			\ref{lambda1} & $\lambda_1$\\[1mm]
+			\ref{lambda2} & $\lambda_2$\\[1mm]
+			};
+	\end{tikzpicture}
+	%
+	&
+	%
+	\begin{tikzpicture}
+		%
+		\begin{axis}[
+			width = 16cm,
+			height = 8cm,
+			scale = .7,
+			xmin = -20,
+			xmax = 20,
+			ymin = -3.5,
+			ymax = 25,
+			xlabel = {Momentum (eV/c)},
+			ylabel = {Energy (meV)},
+			grid = both,
+			]
+			\addplot[thick] table {MOM4_1.dat};
+			\label{lambda2}
+			\addplot[thick, red] table {MOM4_2.dat};
+			\label{lambda1}
+		\end{axis}
+		%
+	\end{tikzpicture}
+	%
+	&
+	%
+	\begin{tikzpicture}
+		%
+		\begin{axis}[
+			width = 16cm,
+			height = 8cm,
+			scale = .7,
+			xmin = -.4,
+			xmax = .4,
+			ymin = -.4,
+			ymax = 2.75,
+			xlabel = {Momentum (eV/c)},
+			ylabel = {Energy ($\mu$eV)},
+			grid = both,
+			]
+			\addplot[thick] table {MOM5_1.dat};
+			\addplot[thick, red] table {MOM5_2.dat};
+		\end{axis}
+		%
+	\end{tikzpicture}
+	%
+\end{tabular}
+
+\end{document}
