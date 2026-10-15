@@ -22,6 +22,9 @@ If you use this code, please cite the paper and the code (see `CITATION.cff`).
 Code: https://github.com/bergoldpa/rashba-mqc-dynamics (archived on Zenodo: https://doi.org/10.5281/zenodo.23397391;
 the results of the paper were computed with version v1.0.0, https://doi.org/10.5281/zenodo.23397392)
 
+Data: all simulation results of the paper are available at https://doi.org/10.5281/zenodo.23397804
+(unzip into this folder to get every result in the place where the code writes it).
+
 ## License
 
 MIT License, see `LICENSE`.
@@ -31,6 +34,7 @@ MIT License, see `LICENSE`.
 The repository contains only the code and the LaTeX sources of the figures. All
 results (`.mat`, `.dat`, `.png`, `.fig`, compiled figures) are created by running
 `run_project.m` (see below) and are written into the case folders.
+The results of the paper can also be downloaded from https://doi.org/10.5281/zenodo.23397804.
 
 ## Folder structure
 
